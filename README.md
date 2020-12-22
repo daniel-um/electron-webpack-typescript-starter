@@ -1,6 +1,12 @@
 # hello-electron-webpack
 
-### vanilla electron-webpack boilerplate
+## todo
+- add jest or mocha/chai/sinon
+- add nyc
+
+## genesis
+
+#### vanilla electron-webpack boilerplate
 - `mkdir -p src/{main,renderer}`
 - `touch README.md .gitignore src/main/index.js src/renderer/index.js`
 - `yarn init -y`
@@ -23,7 +29,7 @@
 - populate basic content for both index.js files in src
 - `yarn dev`
 
-### add typescript
+#### add typescript
 - `yarn add -D electron-webpack-ts typescript`
 - `touch tsconfig.json`
 - add to tsconfig.json:
@@ -33,10 +39,10 @@
 - `mv src/main/index.js src/main/index.ts`
 - `mv src/renderer/index.js src/renderer/index.ts`
 
-### init git
+#### init git
 - `git init && git add . && git commit -m "initial commit"`
 
-### add prettier, eslint, husky, lint-staged
+#### add prettier, eslint, husky, lint-staged
 - `yarn add -D prettier eslint`
 - `npx mrm lint-staged`
 - looks like artifact file left: `4`. delete it
@@ -58,9 +64,4 @@
     "extends": ["plugin:@typescript-eslint/recommended"]
   }
   ```
-
-### todo
-- add prettier and eslint (remove electron-webpack-eslint)
-- add and configure husky and lint-staged via `npx mrm lint-staged`
-- add jest or mocha/chai/sinon
-- add nyc
+  
