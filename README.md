@@ -23,20 +23,6 @@
 - populate basic content for both index.js files in src
 - `yarn dev`
 
-### add eslint (! removed, in favor of lint-staged)
-- `yarn add -D electron-webpack-eslint`
-- `touch .eslintrc.js`
-- add to .eslintrc.js:
-  ```
-  module.exports = {
-    extends: 'eslint:recommended',
-    parser: 'babel-eslint',
-    parserOptions: { sourceType: 'module' },
-    env: { browser: true, node: true }
-  }
-  ```
-- `yarn dev` or `eslint src/main/index.js` to try out eslint
-
 ### add typescript
 - `yarn add -D electron-webpack-ts typescript`
 - `touch tsconfig.json`
@@ -46,6 +32,32 @@
   ```
 - `mv src/main/index.js src/main/index.ts`
 - `mv src/renderer/index.js src/renderer/index.ts`
+
+### init git
+- `git init && git add . && git commit -m "initial commit"`
+
+### add prettier, eslint, husky, lint-staged
+- `yarn add -D prettier eslint`
+- `npx mrm lint-staged`
+- looks like artifact file left: `4`. delete it
+- modify package.json to:
+  ```
+  "lint-staged": {
+    "src/**/*.{js,ts,json,md}": [
+      "prettier --write",
+      "eslint --fix-dry-run"
+    ]
+  }
+  ```
+- `yarn add -D @typescript-eslint/parser @typescript-eslint/eslint-plugin`
+- add to package.json:
+  ```
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": ["@typescript-eslint"],
+    "extends": ["plugin:@typescript-eslint/recommended"]
+  }
+  ```
 
 ### todo
 - add prettier and eslint (remove electron-webpack-eslint)
