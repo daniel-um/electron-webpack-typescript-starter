@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^26.0.19",
     "@typescript-eslint/eslint-plugin": "^4.11.0",
     "@typescript-eslint/parser": "^4.11.0",
     "electron": "^11.1.1",
@@ -12,12 +13,14 @@
     "electron-webpack-ts": "^4.0.1",
     "eslint": "^7.16.0",
     "husky": "^4.3.6",
+    "jest": "^26.6.3",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "typescript": "^4.1.3",
     "webpack": "4.42.0"
   },
   "scripts": {
+    "test": "jest --coverage",
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
@@ -36,7 +39,16 @@
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
-    "plugins": ["@typescript-eslint"],
-    "extends": ["plugin:@typescript-eslint/recommended"]
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "plugin:@typescript-eslint/recommended"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ]
   }
 }

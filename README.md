@@ -1,8 +1,8 @@
 # electron-webpack-typescript-starter
 
 ## todo
-- add jest or mocha/chai/sinon
-- add nyc
+- add tests. get to 100% coverage
+- ci, auto-updater
 
 ## genesis
 
@@ -64,4 +64,16 @@
     "extends": ["plugin:@typescript-eslint/recommended"]
   }
   ```
-  
+
+#### add jest
+- `yarn add -D jest @types/jest`
+- add to package.json:
+  ```
+  "jest": {
+    "collectCoverageFrom": [ "src/**/*.ts" ]
+  }
+  ```
+- add to package.json scripts: `"test": "jest --coverage"`
+- `mkdir -p src/__tests__/{main,renderer}`
+- `touch src/__tests__/main/index.test.ts`
+- add to .gitignore: `coverage/`
