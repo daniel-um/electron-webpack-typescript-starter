@@ -1,4 +1,4 @@
-# hello-electron-webpack
+# electron-webpack-typescript-starter
 
 ## todo
 - add jest or mocha/chai/sinon

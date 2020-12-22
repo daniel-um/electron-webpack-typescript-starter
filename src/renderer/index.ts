@@ -1,2 +1,2 @@
 const appElement = document.getElementById("app");
-appElement.innerText = "hello-electron-webpack";
+appElement.innerText = "electron-webpack-typescript-starter";

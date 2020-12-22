@@ -1,5 +1,5 @@
 {
-  "name": "hello-electron-webpack",
+  "name": "electron-webpack-typescript-starter",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
